@@ -26,20 +26,20 @@ export const Form = ({ onSubmit }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="Required amount">Required amount</label>
+        <label htmlFor="amount">Required amount</label>
         <input
           type="currency"
           className="form-control"
-          id="Required amount"
+          id="amount"
           placeholder="xyz/-"
         />
       </div>
       <div className="form-group">
-        <label htmlFor="Payment details">Payment details</label>
+        <label htmlFor="upidetails">Payment details</label>
         <input
           type="currency"
           className="form-control"
-          id="Payment details"
+          id="upidetails"
           placeholder="UPI ID"
         />
       </div>

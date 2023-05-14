@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import { useContext } from 'react';
 import { UserContext } from '../contexts/user.context';
-import ReactModal from 'react-modal'; 
+// import ReactModal from 'react-modal'; 
 import React, {useState} from 'react';
 
 import { Container } from './container';
@@ -40,6 +40,9 @@ const onSubmit = (event) => {
   event.preventDefault(event);
   console.log(event.target.name.value);
   console.log(event.target.email.value);
+  console.log(event.target.description.value);
+  console.log(event.target.amount.value);
+  console.log(event.target.upidetails.value);
 };
 
  return (
