@@ -2,6 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Row, Col, Container } from "react-bootstrap";
 import axios from 'axios';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+// import Payment from './payment';
+import {Popover } from '@mui/material'
+
 
 export default function Dynamic() {
 
@@ -14,6 +19,23 @@ export default function Dynamic() {
     };
     fetchdata();
     }, []);
+
+    // const payment = async()=>{
+    //     <Popover 
+    //     anchorReference="anchorPosition"
+    //     anchorPosition={{ top: 200, left: 400 }}
+    //     anchorOrigin={{
+    //         vertical: 'center',
+    //         horizontal: 'left',
+    //     }}
+    //     transformOrigin={{
+    //         vertical: 'center',
+    //         horizontal: 'left',
+    //     }}
+    //     >
+    //     The content of the Popover.
+    //     </Popover>
+    // };
 
     return(
         <Container>
@@ -29,7 +51,26 @@ export default function Dynamic() {
                                     <Card.Subtitle>{product.email}</Card.Subtitle>
                                     <Card.Text>{product.desc}</Card.Text>
                                     <Card.Header>{product.amount}</Card.Header>
-                                    <Card.Footer>{product.details}<button>Fund</button></Card.Footer>
+                                    <Card.Footer>{product.details}</Card.Footer>
+                                    <Popup trigger=
+                                        {<button> Fund </button>}
+                                        modal nested>
+                                        {
+                                            close => (
+                                                <div className>
+                                                    <div className>
+                                                        <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"/>
+                                                    </div>
+                                                    <div>
+                                                        <button onClick=
+                                                            {() => close()}>
+                                                                X
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
+                                    </Popup>
                                 </Card.Body>
                             </Card>
                         </Col>
