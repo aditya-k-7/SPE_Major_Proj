@@ -30,7 +30,7 @@ import Home from "./pages/Home.page";
 import Login from "./pages/Login.page";
 import PrivateRoute from "./pages/PrivateRoute.page";
 import Signup from "./pages/Signup.page";
- 
+import Page2 from "./pages/PreHome";
 function App() {
  return (
    <BrowserRouter>
@@ -40,6 +40,7 @@ function App() {
        <Routes>
          <Route exact path="/login" element={<Login />} />
          <Route exact path="/signup" element={<Signup />} />
+         {/* <Route exact path ="/" element={<Page2/>}/> */}
          {/* We are protecting our Home Page from unauthenticated */}
          {/* users by wrapping it with PrivateRoute here. */}
          <Route element={<PrivateRoute />}>
