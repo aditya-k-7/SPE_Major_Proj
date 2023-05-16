@@ -7,11 +7,19 @@ import axios from 'axios';
 import { Container } from './container';
 import Dynamic from './dynamic';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { handleCloseModal } from './Modal';
 // import { Card } from './Card';
 // import styled from "styled-components";
 // https://youtu.be/1Y7KFvP8aOk
+
+
+
+import "./Home.css"
 export default function Home() {
  const { logOutUser } = useContext(UserContext);
+
+
+
  
  // This function is called when the user clicks the "Logout" button.
  const logOut = async () => {
@@ -30,12 +38,14 @@ export default function Home() {
 
 const triggerText = 'Open form';
 const onSubmit = async (event) => {
-  // event.preventDefault(event);
-  // console.log(event.target.name.value);
-  // console.log(event.target.email.value);
-  // console.log(event.target.description.value);
-  // console.log(event.target.amount.value);
-  // console.log(event.target.upidetails.value);
+   event.preventDefault(event);
+
+
+//   console.log(event.target.name.value);
+//   console.log(event.target.email.value);
+//   console.log(event.target.description.value);
+//   console.log(event.target.amount.value);
+//   console.log(event.target.upidetails.value);
   const response = await axios.post('http://localhost:5000/create',{
     "title":event.target.name.value,
     "email":event.target.email.value,
@@ -43,7 +53,7 @@ const onSubmit = async (event) => {
     "amount":event.target.amount.value,
     "details":event.target.upidetails.value
   })
-  this.handleCloseModal(); 
+  this.handleCloseModal();
   console.log(response.data.status);
 
 };
@@ -58,7 +68,7 @@ const onSubmit = async (event) => {
      
      <div className="Home">
       <Container triggerText={triggerText} onSubmit={onSubmit} />
-    </div>
+     </div>
     <div>
       <Dynamic />
     </div>

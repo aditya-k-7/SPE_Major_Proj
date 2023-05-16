@@ -2,11 +2,14 @@ import { Button, TextField } from "@mui/material";
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/user.context";
+//import { useNavigate } from 'react-router-dom';
 import "./Signup.css";
  
 const Signup = () => {
+ const nav = useNavigate();
  const navigate = useNavigate();
  const location = useLocation();
+ const nav_signup = () => {nav('/home')}
  
  // As explained in the Login page.
  const { emailPasswordSignup } = useContext(UserContext);
@@ -61,9 +64,9 @@ const Signup = () => {
       onChange={onFormInputChange}
       style={{ marginBottom: "1rem" }}
     />
-    <Button variant="contained" color="primary" onClick={onSubmit}>
-      Signup
-    </Button>
+
+    <button className="pg1-button" id="signup" onClick={nav_signup}>Signup</button>
+
     <p>
       Have an account already? <Link to="/login">Login</Link>
     </p>

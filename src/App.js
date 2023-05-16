@@ -40,11 +40,11 @@ function App() {
        <Routes>
          <Route exact path="/login" element={<Login />} />
          <Route exact path="/signup" element={<Signup />} />
-         {/* <Route exact path ="/" element={<Page2/>}/> */}
+         <Route exact path ="/" element={<Page2/>}/>
          {/* We are protecting our Home Page from unauthenticated */}
          {/* users by wrapping it with PrivateRoute here. */}
          <Route element={<PrivateRoute />}>
-           <Route exact path="/" element={<Home />} />
+           <Route exact path="/home" element={<Home />} />
          </Route>
        </Routes>
      </UserProvider>
